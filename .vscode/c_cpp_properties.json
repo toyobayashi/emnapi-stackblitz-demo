@@ -1,0 +1,59 @@
+{
+  "env": {
+    "includePath": [
+      "${default}",
+      "${workspaceFolder}/node_modules/emnapi/include"
+    ],
+    "defines": ["NAPI_DISABLE_CPP_EXCEPTIONS"]
+  },
+  "configurations": [
+    {
+      "name": "Emscripten",
+      "defines": ["${defines}", "__wasm__", "__EMSCRIPTEN_PTHREADS__", "NAPI_VERSION=8"],
+      "compilerPath": "${env:EMSDK}/upstream/emscripten/emcc",
+      "intelliSenseMode": "linux-clang-x86",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "includePath": ["${includePath}"]
+    },
+    {
+      "name": "Win32 Emscripten",
+      "defines": ["${defines}", "__wasm__", "__EMSCRIPTEN_PTHREADS__", "NAPI_VERSION=8"],
+      "compilerPath": "${env:EMSDK}\\upstream\\emscripten\\emcc.bat",
+      "intelliSenseMode": "linux-clang-x86",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "includePath": ["${includePath}"]
+    },
+    {
+      "name": "WASI",
+      "defines": ["${defines}"],
+      "compilerPath": "${env:WASI_SDK_PATH}/bin/clang",
+      "intelliSenseMode": "clang-x86",
+      "cStandard": "c11",
+      "cppStandard": "c++14",
+      "includePath": ["${includePath}"]
+    },
+    {
+      "name": "WASI-THREADS",
+      "defines": ["${defines}", "_REENTRANT"],
+      "compilerPath": "${env:WASI_SDK_PATH}/bin/clang",
+      "intelliSenseMode": "clang-x86",
+      "cStandard": "c11",
+      "cppStandard": "c++14",
+      "includePath": ["${includePath}"],
+      "compilerArgs": ["--target=wasm32-wasi-threads"]
+    },
+    {
+      "name": "WASM32",
+      "defines": ["${defines}", "PAGESIZE=65536"],
+      "compilerPath": "${env:WASI_SDK_PATH}/bin/clang",
+      "intelliSenseMode": "clang-x86",
+      "cStandard": "c11",
+      "cppStandard": "c++14",
+      "includePath": ["${includePath}"],
+      "compilerArgs": ["--target=wasm32"]
+    }
+  ],
+  "version": 4
+}

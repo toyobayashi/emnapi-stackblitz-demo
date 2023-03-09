@@ -1,0 +1,15 @@
+{
+  "name": "emnapi-stackblitz-demo",
+  "version": "0.0.0",
+  "author": "toyobayashi",
+  "private": true,
+  "devDependencies": {
+    "emnapi": "^0.33.1"
+  },
+  "dependencies": {
+    "@emnapi/core": "^0.33.1",
+    "@emnapi/runtime": "^0.33.1",
+    "@tybys/wasm-util": "^0.8.0",
+    "memfs-browser": "^3.4.13000"
+  }
+}
