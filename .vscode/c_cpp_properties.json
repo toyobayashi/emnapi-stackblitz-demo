@@ -2,7 +2,8 @@
   "env": {
     "includePath": [
       "${default}",
-      "${workspaceFolder}/node_modules/emnapi/include"
+      "${workspaceFolder}/node_modules/emnapi/include",
+      "${workspaceFolder}/node_modules/node-addon-api"
     ],
     "defines": ["NAPI_DISABLE_CPP_EXCEPTIONS"]
   },
